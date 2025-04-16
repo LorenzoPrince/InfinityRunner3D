@@ -12,6 +12,13 @@ public class moveObjectScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * Speed * Time.deltaTime); //recordar time.deltatime es para que vaya siempre fluido en tiempo
+        transform.Translate(Vector3.right * Speed * Time.deltaTime); //recordar time.deltatime es para que vaya siempre fluido en tiempo
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Destroyer"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -6,10 +6,11 @@ public class spawnerMap : MonoBehaviour
 
     [SerializeField] GameObject[] blocks;
     public Transform spawnPoint;
+
     void Start()
     {
         SpawnBlock();
-        InvokeRepeating("SpawnBlock", 0, 1f);
+        InvokeRepeating("SpawnBlock", 0, 6f);
     }
 
     // Update is called once per frame
