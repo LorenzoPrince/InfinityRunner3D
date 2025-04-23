@@ -67,8 +67,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.2410154, y: 1.9255188, z: 3.0077019}
-  m_Center: {x: -2.9975538, y: 0.46275938, z: -5.65691}
+  m_Size: {x: 0, y: 0.98438525, z: 3.0077019}
+  m_Center: {x: -1.8770461, y: 3.114058, z: -5.65691}
 --- !u!1 &2880521082874418116
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 7194708910368381600}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

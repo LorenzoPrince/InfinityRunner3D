@@ -1,9 +1,11 @@
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class PlayerMove : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject gameOverCanvas; // Asigno el canvas en el inspect
     public float distance = 3f; // en la que se mueva
     private int actual = 1; // 1 centro seria 2 derecha 0 izquierda
     public float cambioSpeed = 5f; // velocidad hacia adelante
@@ -18,6 +20,7 @@ public class PlayerMove : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, posicionActual);
         rigidBody = GetComponent<Rigidbody>();
         isGrounded = true;
+        gameOverCanvas.SetActive(false); // Asegúrate de que empiece oculto
     }
     // Update is called once per frame
     void Update()
@@ -56,6 +59,17 @@ public class PlayerMove : MonoBehaviour
         {
             isGrounded = true;
         }
+        Debug.Log("choque contra " + contraLoQueChoque.gameObject.name);
+        if (contraLoQueChoque.gameObject.CompareTag("Obstaculo"))
+        {
+            Time.timeScale = 0f; //pauso.
+            gameOverCanvas.SetActive(true); //muestro canvas
+        }
+    }
+    public void Rejugar()
+    {
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
     }
 }
 
