@@ -12,6 +12,34 @@ PrefabInstance:
       propertyPath: Speed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 580047194695514198, guid: ddcdcaa0d3d68cb40b0f7052f5247299, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 619ef871ea4f3dd469b9612698a816cd, type: 2}
+    - target: {fileID: 638057052548183562, guid: ddcdcaa0d3d68cb40b0f7052f5247299, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 619ef871ea4f3dd469b9612698a816cd, type: 2}
+    - target: {fileID: 1689229420211356548, guid: ddcdcaa0d3d68cb40b0f7052f5247299, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 619ef871ea4f3dd469b9612698a816cd, type: 2}
+    - target: {fileID: 3248005232546255754, guid: ddcdcaa0d3d68cb40b0f7052f5247299, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 619ef871ea4f3dd469b9612698a816cd, type: 2}
+    - target: {fileID: 4137675081715503981, guid: ddcdcaa0d3d68cb40b0f7052f5247299, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 619ef871ea4f3dd469b9612698a816cd, type: 2}
+    - target: {fileID: 4238365087432347631, guid: ddcdcaa0d3d68cb40b0f7052f5247299, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 619ef871ea4f3dd469b9612698a816cd, type: 2}
+    - target: {fileID: 4526875750379781070, guid: ddcdcaa0d3d68cb40b0f7052f5247299, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 619ef871ea4f3dd469b9612698a816cd, type: 2}
     - target: {fileID: 6511932942075826602, guid: ddcdcaa0d3d68cb40b0f7052f5247299, type: 3}
       propertyPath: m_Name
       value: Obstacule8 Variant
@@ -56,6 +84,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7248135244160185545, guid: ddcdcaa0d3d68cb40b0f7052f5247299, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 619ef871ea4f3dd469b9612698a816cd, type: 2}
+    - target: {fileID: 8057443805022103123, guid: ddcdcaa0d3d68cb40b0f7052f5247299, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 619ef871ea4f3dd469b9612698a816cd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

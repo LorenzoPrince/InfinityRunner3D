@@ -615,6 +615,13 @@ MonoBehaviour:
   - {fileID: 86021045883617527, guid: 50c680023ed116c409c24bc237629cb5, type: 3}
   - {fileID: 8934788482625642845, guid: 9ddbb9ae04de81644854726e1a60950f, type: 3}
   - {fileID: 6511932942075826602, guid: ddcdcaa0d3d68cb40b0f7052f5247299, type: 3}
+  - {fileID: 7679117728423083397, guid: 6a9f8dc2db9b6e94085efb6849056b6e, type: 3}
+  - {fileID: 5136273758248448403, guid: 4bfd8b71290f4a142b863fa701cbc16c, type: 3}
+  - {fileID: 4062522720342691479, guid: c8e94c6cadd45c946b290414c0206f1a, type: 3}
+  - {fileID: 1879660551340512984, guid: ad44256f249a51a4ab5500afa9165939, type: 3}
+  - {fileID: 3857762839773384525, guid: 7239d4cfb10a2e0408fbeda28a7b21c2, type: 3}
+  - {fileID: 1289967543320380181, guid: 425ca5a115ccd1e4b8501cdf0c84953b, type: 3}
+  - {fileID: 2493669895970221831, guid: 217b62d0eab73754d87dc1716fada04a, type: 3}
   spawnPoint: {fileID: 545644186}
 --- !u!1 &832575517
 GameObject:
@@ -700,6 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385034f7cd5aefc4e8ed477d77dbc53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverCanvas: {fileID: 0}
   distance: 3
   cambioSpeed: 5
   Speed: 5
