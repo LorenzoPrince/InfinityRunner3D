@@ -21,6 +21,8 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
+        int bestScore = PlayerPrefs.GetInt("Record", 0);      // Cargar récord guardado y mostrarlo
+        record.text = "RECORD: " + bestScore; //muestra lo que guardo
         coinText.text = "Puntos: " + coins;
         posicionActual = actual * distance;
         transform.position = new Vector3(transform.position.x, transform.position.y, posicionActual);
@@ -71,7 +73,7 @@ public class PlayerMove : MonoBehaviour
         {
             currentPoints.text = "Puntos en partida: " + coins;
             UpdateScoreUI();
-            coinText.gameObject.SetActive(false); // Lo desactiva al contador
+            coinText.gameObject.SetActive(false); // Lo desactiva al co
             Time.timeScale = 0f; //pauso.
             gameOverCanvas.SetActive(true); //muestro canvas
 
@@ -92,19 +94,16 @@ public class PlayerMove : MonoBehaviour
     void UpdateScoreUI()
     {
         coinText.text = "Puntos: " + coins;
-        int puntosRecord;
-        if (int.TryParse(record.text, out puntosRecord)) //tryparse intenta convertir string en numeros
+
+        int recordGuardado = PlayerPrefs.GetInt("Record", 0);
+
+        if (coins > recordGuardado)
         {
-            if (coins > puntosRecord)
-            {
-                record.text = coins.ToString();
-            }
+            PlayerPrefs.SetInt("Record", coins); // Guarda el nuevo récord
+            PlayerPrefs.Save(); // Asegura que se guarde inmediatamente
         }
-        else
-        {
-            // Si no hay record todavia lo setea
-            record.text = "RECORD: " + coins.ToString();
-        }
+
+        record.text = "RECORD: " + PlayerPrefs.GetInt("Record", 0); // Muestra el récord actual 
     }
 
 }
