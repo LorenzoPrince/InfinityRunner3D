@@ -13,9 +13,15 @@ public class PlayerMove : MonoBehaviour
     private float posicionActual;
     private bool isGrounded;
     public float fuerzaSalto;
+    public int coins = 0;
+    public TextMeshProUGUI coinText;
+    public TextMeshProUGUI record;
+    public TextMeshProUGUI currentPoints; //puntos actuales
     public Rigidbody rigidBody;
     void Start()
     {
+        Time.timeScale = 1f;
+        coinText.text = "Puntos: " + coins;
         posicionActual = actual * distance;
         transform.position = new Vector3(transform.position.x, transform.position.y, posicionActual);
         rigidBody = GetComponent<Rigidbody>();
@@ -25,6 +31,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
 
         //transform.Translate(Vector3.left * Speed * Time.deltaTime); //se mueve para adelante
         if (Input.GetKeyDown(KeyCode.A))
@@ -62,8 +69,19 @@ public class PlayerMove : MonoBehaviour
         Debug.Log("choque contra " + contraLoQueChoque.gameObject.name);
         if (contraLoQueChoque.gameObject.CompareTag("Obstaculo"))
         {
+            currentPoints.text = "Puntos en partida: " + coins;
+            UpdateScoreUI();
+            coinText.gameObject.SetActive(false); // Lo desactiva al contador
             Time.timeScale = 0f; //pauso.
             gameOverCanvas.SetActive(true); //muestro canvas
+
+        }
+        Debug.Log("choque contra " + contraLoQueChoque.gameObject.name);
+        if (contraLoQueChoque.gameObject.CompareTag("Coin"))
+        {
+            Destroy(contraLoQueChoque.gameObject);
+            coins++;
+            UpdateScoreUI();
         }
     }
     public void Rejugar()
@@ -71,5 +89,24 @@ public class PlayerMove : MonoBehaviour
         Time.timeScale = 1f; 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
     }
+    void UpdateScoreUI()
+    {
+        coinText.text = "Puntos: " + coins;
+        int puntosRecord;
+        if (int.TryParse(record.text, out puntosRecord)) //tryparse intenta convertir string en numeros
+        {
+            if (coins > puntosRecord)
+            {
+                record.text = coins.ToString();
+            }
+        }
+        else
+        {
+            // Si no hay record todavia lo setea
+            record.text = "RECORD: " + coins.ToString();
+        }
+    }
+
 }
+
 

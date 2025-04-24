@@ -8,12 +8,17 @@ public class SpawnerObjects : MonoBehaviour
     public Transform spawnPoint;
 
 
+    private string metodoActual;
+    private float interval = 6f;
+
+
     void Start()
     {
-        SpawnBlock();
-        InvokeRepeating("SpawnBlock", 0, 6f);
+        metodoActual = "SpawnBlock";
+        InvokeRepeating("SpawnBlock", 0, interval);
         Invoke("ChangeSpawnBlock2", 20f);
         Invoke("SpeedUpSpawnBlock2", 30f);
+        Invoke("SpeedUpSpawnBlock3", 50f);
     }
 
     // Update is called once per frame
@@ -38,15 +43,36 @@ public class SpawnerObjects : MonoBehaviour
     void ChangeSpawnBlock2()
 
     {
-        Debug.Log("Cambiando a SpawnBlock2");
-        CancelInvoke("SpawnBlock");
-        InvokeRepeating("SpawnBlock2", 0f, 5f);
+        if (metodoActual != "SpawnBlock2")
+        {
+            Debug.Log("Cambiando a SpawnBlock2 HEAVY");
+            CancelInvoke(metodoActual); // Cancela el método que estaba antes
+            metodoActual = "SpawnBlock2";
+            interval = 5f;
+            InvokeRepeating(metodoActual, 0f, interval);
+        }
     }
     void SpeedUpSpawnBlock2()
     {
-        Debug.Log("⚡ Acelerando SpawnBlock2 a cada 3 segundos");
-        CancelInvoke("SpawnBlock2"); // Cancela solo este si estaba corriendo
-        InvokeRepeating("SpawnBlock2", 0f, 3f);
+        if (metodoActual == "SpawnBlock2" && interval != 3f)
+        {
+            Debug.Log("Acelerando SpawnBlock2 a cada 3 segundos AAAAAAAAAVERYHEAVY");
+            CancelInvoke(metodoActual);
+            interval = 3f;
+            InvokeRepeating(metodoActual, 0f, interval);
+        }
+
+    }
+    void SpeedUpSpawnBlock3()
+    {
+        if (metodoActual == "SpawnBlock2" && interval != 3f)
+        {
+            Debug.Log("Acelerando SpawnBlock2 a cada 3 segundos AAAAAAAAAVERYHEAVY");
+            CancelInvoke(metodoActual);  
+            interval = 1f; 
+            InvokeRepeating(metodoActual, 0f, interval);  
+        }
+
     }
 }
 
